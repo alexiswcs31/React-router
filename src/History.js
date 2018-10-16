@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { Component } from "react";
 
-const History = () => (
-    <div>
-        <h2>HISTORY</h2>
-        Notre histoire.
-    </div>
-);
+class History extends Component {
+    render () {
+        return (
+            <div>
+                <h1>HISTORY</h1>
+                <h3>Notre histoire.</h3>
+            </div>
+        );
+    }
+}
 
 export default History;

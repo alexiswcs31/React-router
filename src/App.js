@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
+import { Switch, Route, NavLink, BrowserRouter } from 'react-router-dom';
 import './App.css';
-import { Switch, Route, NavLink } from 'react-router-dom';
 
 import Home from './Home';
 import History from './History';
@@ -8,24 +8,17 @@ import History from './History';
 class App extends Component {
   render () {
     return (
-      <div className="App">
-        <div className="menu">
-          <ul>
-            <li>
-              <NavLink to="/" activeClassName="active">Home</NavLink>
-            </li>
-            <li>
-              <NavLink to="/notre-histoire">History</NavLink>
-            </li>
-          </ul>
-        </div>
-        <div className="App-mess">
+      <BrowserRouter>
+        <div>
+          <NavLink to="/">Home</NavLink><br />
+          <NavLink to="/notre-histoire" activeClassName="selected">History</NavLink>
+
           <Switch>
-            <Route path="/" component={Home} />
+            <Route exact path="/" component={Home} />
             <Route path="/notre-histoire" component={History} />
           </Switch>
         </div>
-      </div>
+      </BrowserRouter>
     );
   }
 }

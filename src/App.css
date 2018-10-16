@@ -1,4 +1,7 @@
-a.active
-{
+div {
+  text-align: center;
+}
+
+.selected {
   color: red;
 }
